@@ -1,0 +1,20 @@
+1.txt：普通文本
+2py，cpp:代码
+3md:maerkdoown文档
+4ini，conf：配置及文件
+5hosts：无扩展名
+以下为视频
+6avi
+7mp4
+图片
+8jpg
+9png
+10svg
+11gif
+12exe：可执行文件
+压缩
+处理乱输入的代码
+ if(scanf("%d", &x)!=1){
+	while(getchar()!='\n');
+	printf("输入无效，请重新输入整数");
+	continue;}
