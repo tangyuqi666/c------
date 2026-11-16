@@ -1,0 +1,15 @@
+# 编译产物
+*.exe
+*.obj
+*.o
+*.out
+*.ilk
+*.pdb
+
+# 调试与性能分析
+gmon.out
+*.gcda
+*.gcno
+
+# 编辑器
+.vscode/

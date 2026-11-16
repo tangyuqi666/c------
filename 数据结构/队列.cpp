@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define MAXSIZE 100
+#define MAXSIZE 3
 //一边进一边出横向排列，出的一边叫队头，进的一边叫队尾
 //可以分为顺序结构，链表结构，队头叫front,尾部叫rear
 //总的来讲，先进的先出
@@ -26,14 +26,14 @@ int queuefull(queue* Q){
 	if(Q->front>0){
 		int step=Q->front;
 		for(int i=Q->front;i<=Q->rear;i++){
+			Q->data[i-step]=Q->data[i];}
 			Q->front=0;
 			Q->rear=Q->rear-step;
 			return 1;
-		}
-		
 	}
 	else {
 			printf("满了");
+			return 0;
 		}
 }//用于去判断队列是否满了
 int dequeue(queue* Q){
@@ -59,7 +59,7 @@ int equeue(queue* Q,int e){
 int gethead(queue *Q,int *e){
 	if(Q->front==Q->rear){
 		printf("满了");
-		return 0;
+	//	return 0;
 	}
 	*e=Q->data[Q->front];
 	return 1;
@@ -70,6 +70,7 @@ int main(){
        equeue(&Q,10);
        equeue(&Q,20);
         equeue(&Q,30);
+       int q=dequeue(&Q);
         equeue(&Q,40);
        equeue(&Q,50);
        printf("%d",dequeue(&Q));
@@ -79,5 +80,4 @@ int main(){
        gethead(&Q,&e);
        printf("%d\n",e);
        return 0;
-       
 }

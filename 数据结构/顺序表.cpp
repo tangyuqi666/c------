@@ -63,6 +63,13 @@ s* initlist(){//结构体指针内存动态分配初始化
 	l->length=0;
 	return l;
 }
+void destroylist(s* l){
+	if(l->date!=NULL){
+		free(l->date);
+		l->date=NULL;
+	}
+	l->length=0;
+}
 int main(){
 //	s list;
 //	initelist(&list);
@@ -83,5 +90,6 @@ int main(){
 	bianli(list);
 	int o=find(list,99);
 	printf("%d",o);
+	destroylist(list);
 }
 	
